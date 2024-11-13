@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>DOM</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <h1 id="myName"></h1>
+        </div>
+    </header>
+    <main class="main" id="main">
+        <section class="section" id="formSection">
+            <div class="container">
+                <form action="" class="hero-form" id="heroform">
+                    <h2>Enter the character</h2>
+                    <div class="row">
+                        <div class="col">
+                            <label 
+                            for="heroInput"
+                            class="form-label">Name</label>
+                            <input type="text"
+                            class="form-control"
+                            id="heroInput">
+                        </div>
+                        <div class="col">
+                            <label 
+                            for="aliasInput"
+                            class="form-label">Alias</label>
+                            <input type="text"
+                            class="form-control"
+                            id="aliasInput">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input type="radio"
+                                class="form-check-input"
+                                name="isHero"
+                                id="hero"/>
+                                <label 
+                                for="hero"
+                                class="form-check-label">
+                                Hero</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio"
+                                class="form-check-input"
+                                name="isHero"
+                                id="Villain"/>
+                                <label 
+                                for="villain"
+                                class="form-check-label">
+                                Villain</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="section" id="cardsection">
+            <div class="container" id="container">
+                <div class="card">
+                    <img src="" id="heroImg" alt="">
+                    <h2>Name:
+                        <span id="heroName"></span>
+                    </h2>
+                    <p>
+                        Alias:
+                        <span id="aliasName"></span>
+                    </p>
+                    <p>Powers:</p>
+                    <ul id="powerList">
+                        <!--li.list-item>power -->
+        
+        
+        
+                    
+                    </ul>
+                    <p>Enemies:</p>
+                    <ul id="enemyList"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
