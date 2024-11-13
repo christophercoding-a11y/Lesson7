@@ -25,24 +25,29 @@
                             class="form-label">Name</label>
                             <input type="text"
                             class="form-control"
-                            id="heroInput">
+                            id="heroInput"
+                            name="heroName"
+                            />
                         </div>
                         <div class="col">
                             <label 
                             for="aliasInput"
                             class="form-label">Alias</label>
                             <input type="text"
-                            class="form-control"
-                            id="aliasInput">
+                                class="form-control"
+                                id="aliasInput"
+                                name="aliasName"
+                            />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-check">
-                                <input type="radio"
-                                class="form-check-input"
-                                name="isHero"
-                                id="hero"/>
+                                <input
+                                    type="radio"
+                                    class="form-check-input"
+                                    name="isHero"
+                                    id="hero"/>
                                 <label 
                                 for="hero"
                                 class="form-check-label">
@@ -51,13 +56,129 @@
                             <div class="form-check">
                                 <input type="radio"
                                 class="form-check-input"
-                                name="isHero"
-                                id="Villain"/>
+                                    name="isHero"
+                                    id="Villain"/>
                                 <label 
-                                for="villain"
-                                class="form-check-label">
-                                Villain</label>
+                                    for="villain"
+                                    class="form-check-label">
+                                Villain
+                            </label>
                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input type="radio"
+                                class="form-check-input"
+                                name="universe"
+                                id="dc"/>
+                                <label 
+                                    for="dc"
+                                    class="form-check-label">
+                                    DC
+                            </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio"
+                                class="form-check-input"
+                                name="universe"
+                                    id="marvel"/>
+                                <label 
+                                    for="dc"
+                                    class="form-check-label">
+                                    Marvel
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h3>Choose up to 3 powers</h3>
+                            <div class="power-input mb-3">
+                                <label 
+                                    for="power1"
+                                class="form-label">Power 1</label>
+                                <input 
+                                    type="text"
+                                    class="form-control"
+                                    id="power1"
+                                    name="powers"
+                                    >
+                            </div>
+                            <div class="power-input mb-3">
+                                <label 
+                                    for="power1"
+                                class="form-label">Power 2</label>
+                                <input 
+                                    type="text"
+                                    class="form-control"
+                                    name="powers"
+                                    id="power2">
+                            </div>
+                            <div class="power-input mb-3">
+                                <label 
+                                    for="power1"
+                                class="form-label">Power 3</label>
+                                <input 
+                                    type="text"
+                                    name="powers"
+                                    class="form-control"
+                                    id="power3">
+                                    
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h3>Choose up to 3 enemies</h3>
+                            <div class="enemy-input mb-3">
+                                <label 
+                                    for="enemy1"
+                                class="form-label">enemy 1</label>
+                                <input 
+                                    type="text"
+                                    name="enemies"
+                                    class="form-control"
+                                    id="enemy1">
+                                    
+                            </div>
+                            <div class="enemy-input mb-3">
+                                <label 
+                                    for="enemy1"
+                                class="form-label">enemy 2</label>
+                                <input 
+                                    type="text"
+                                    name="enemies"
+                                    class="form-control"
+                                    id="enemy2">
+                                    
+                            </div>
+                            <div class="enemy-input mb-3">
+                                <label 
+                                    for="enemy1"
+                                class="form-label">enemy 3</label>
+                                <input 
+                                    type="text"
+                                    name="enemies"
+                                    class="form-control"
+                                    id="enemy3">
+                                    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label 
+                                for="img-input" 
+                                class="form-label"
+                            >Upload an image
+                            </label>
+                            <input 
+                                type="url" 
+                                class="form-control" 
+                                id="imgInput"
+                                name="imgUrl"
+                                />
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary" id="submitBtn">Add hero</button>
                         </div>
                     </div>
                 </form>
@@ -65,7 +186,8 @@
         </section>
         <section class="section" id="cardsection">
             <div class="container" id="container">
-                <div class="card">
+                <div class="row" id="cardrow"></div>
+                <!-- <div class="card">
                     <img src="" id="heroImg" alt="">
                     <h2>Name:
                         <span id="heroName"></span>
@@ -76,7 +198,7 @@
                     </p>
                     <p>Powers:</p>
                     <ul id="powerList">
-                        <!--li.list-item>power -->
+                        li.list-item>power
         
         
         
@@ -84,7 +206,7 @@
                     </ul>
                     <p>Enemies:</p>
                     <ul id="enemyList"></ul>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
