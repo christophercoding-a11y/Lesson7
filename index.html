@@ -18,15 +18,16 @@
             <div class="container">
                 <form action="" class="hero-form" id="heroform">
                     <h2>Enter the character</h2>
-                    <div class="row">
+                    <div class="row mb-3">
                         <div class="col">
                             <label 
                             for="heroInput"
                             class="form-label">Name</label>
                             <input type="text"
-                            class="form-control"
-                            id="heroInput"
-                            name="heroName"
+                                class="form-control"
+                                id="heroInput"
+                                name="heroName"
+                                required
                             />
                         </div>
                         <div class="col">
@@ -37,6 +38,7 @@
                                 class="form-control"
                                 id="aliasInput"
                                 name="aliasName"
+                                required
                             />
                         </div>
                     </div>
@@ -47,7 +49,8 @@
                                     type="radio"
                                     class="form-check-input"
                                     name="isHero"
-                                    id="hero"/>
+                                    id="hero"
+                                    value="hero"/>
                                 <label 
                                 for="hero"
                                 class="form-check-label">
@@ -57,7 +60,8 @@
                                 <input type="radio"
                                 class="form-check-input"
                                     name="isHero"
-                                    id="Villain"/>
+                                    id="villain"
+                                    value="villain"/>
                                 <label 
                                     for="villain"
                                     class="form-check-label">
@@ -70,6 +74,7 @@
                                 <input type="radio"
                                 class="form-check-input"
                                 name="universe"
+                                value="dc"
                                 id="dc"/>
                                 <label 
                                     for="dc"
@@ -81,6 +86,7 @@
                                 <input type="radio"
                                 class="form-check-input"
                                 name="universe"
+                                value="marvel"
                                     id="marvel"/>
                                 <label 
                                     for="dc"
@@ -102,6 +108,7 @@
                                     class="form-control"
                                     id="power1"
                                     name="powers"
+                                    required
                                     >
                             </div>
                             <div class="power-input mb-3">
@@ -135,6 +142,7 @@
                                 <input 
                                     type="text"
                                     name="enemies"
+                                    required
                                     class="form-control"
                                     id="enemy1">
                                     
@@ -175,6 +183,7 @@
                                 class="form-control" 
                                 id="imgInput"
                                 name="imgUrl"
+                                required
                                 />
                         </div>
                         <div class="col">
@@ -186,27 +195,23 @@
         </section>
         <section class="section" id="cardsection">
             <div class="container" id="container">
-                <div class="row" id="cardrow"></div>
-                <!-- <div class="card">
-                    <img src="" id="heroImg" alt="">
-                    <h2>Name:
-                        <span id="heroName"></span>
-                    </h2>
-                    <p>
-                        Alias:
-                        <span id="aliasName"></span>
-                    </p>
-                    <p>Powers:</p>
-                    <ul id="powerList">
-                        li.list-item>power
-        
-        
-        
-                    
-                    </ul>
-                    <p>Enemies:</p>
-                    <ul id="enemyList"></ul>
-                </div> -->
+                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4" id="cardRow">
+                                <ul id="powerList" class="list-group-flush">
+                                    <li class="power-item list-group-item">power1</li>
+                                    <li class="power-item list-group-item">power2</li>
+                                    <li class="power-item list-group-item">power3</li>
+                                </ul>
+                                <p class="text-capitalize">enemies:</p>
+                                <ul id="enemyList" class="list-group-flush">
+                                    <li class="power-item list-group-item">enemy1</li>
+                                    <li class="power-item list-group-item">enemy2</li>
+                                    <li class="power-item list-group-item">enemy3</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div> -->
+                </div> 
             </div>
         </section>
     </main>

@@ -44,7 +44,27 @@ class Superhero {
         // this.powers = [],
         // this.enemies = [],
         // this.imgUrl
-        this.hero = {
+        // build array of characters
+        this.characters = []
+
+        this.cardRow = document.getElementById('cardRow')
+    }
+    // end constructor
+
+    // init or initializer
+    init() {
+        // console.log('intialized')
+        const characters = this.characters
+
+        // console.log(hero)
+        this.getData()
+        this.buildCard
+    }
+
+
+    // collect data from the form
+    getData() {
+        const hero = {
             heroName: '',
             aliasName: '',
             isHero: 'hero' || 'villain',
@@ -53,30 +73,6 @@ class Superhero {
             enemies: [],
             imgUrl: ''
         }
-    }
-    // end constructor
-
-    // init or initializer
-    init() {
-        // console.log('intialized')
-        const hero = this.hero
-        // console.log(hero)
-        this.getData(hero)
-    }
-    addPower(item) {
-        const powerList = document.getElementById('powerList')
-        const li = document.createElement('li')
-        const powers = this.powers
-        // take item and push it into powers array
-        powers.push(item)
-
-        li.innerText = item
-
-        powerList.appendChild(li)
-    }
-
-    // collect data from the form
-    getData(obj) {
         // set inputs
         const heroInput = document.getElementById('heroInput')
         const aliasInput = document.getElementById('aliasInput')
@@ -86,46 +82,104 @@ class Superhero {
         const enemy1 = document.getElementById('enemy1').value || null
         const enemy2 = document.getElementById('enemy2').value || null
         const enemy3 = document.getElementById('enemy3').value || null
+        const imgInput = document.getElementById('imgInput').value
 
         //store values in obj
-        obj.heroName = heroInput.value
-        obj.aliasName = aliasInput.value
+        hero.heroName = heroInput.value
+        hero.aliasName = aliasInput.value
+        hero.imgUrl = imgInput
+
 
         // radio buttons
-        obj.isHero = document.querySelector('input[name=isHero]:checked').value
-        obj.universe = document.querySelector('input[name=universe]:checked').value
+        hero.isHero = document.querySelector('input[name=isHero]:checked').value || null
+        hero.universe = document.querySelector('input[name=universe]:checked').value || null
 
         // add items to array
-        obj.powers = [...obj.powers,power1, power2, power3]
-        obj.enemies = [...obj.enemies,enemy1,enemy2,enemy3]
+        hero.powers = [...hero.powers, power1, power2, power3]
+        hero.enemies = [...hero.enemies, enemy1, enemy2, enemy3]
 
-        console.log(obj)
+        console.log(hero)
+
+        this.characters = [...this.characters, hero]
+        // console.log(this.characters);
+
+        this.buildCard(hero)
+
     }
 
-    addEnemy (item) {
-        const enemyList = document.getElementById('enemyList')
-        const li = document.createElement('li')
-        const enemies = this.enemies
-        // take item and push it into enemies array
-        enemies.push(item)
+    buildCard(obj) {
+        const cardRow = this.cardRow
 
-        li.innerText = item
+        const col = document.createElement('div')
+        col.classList.add('col')
 
-        enemyList.appendChild(li)
-    }
+        const card = document.createElement('div')
+        card.classList.add('card')
 
-    displayHero() {
-        const heroName = document.getElementById('heroName')
-        const alias = document.getElementById('aliasName')
+        const img = document.createElement('img')
+        img.src = obj.imgUrl
+        img.classList.add('img-fluid', 'card-img-top', 'hero-img')
 
-        const img = document.getElementById('heroImg')
+        const cardBody = document.createElement('div')
+        cardBody.classList.add('card-body')
 
-        img.src = `images/${this.imgUrl}`
-        img.al = `${this.hero}`
+        const h3 = document.createElement('h3')
+        h3.classList.add('display-5', 'text-capitalize')
+        h3.innerText = obj.heroName
+
+        const aliasText = document.createElement('p')
+        aliasText.classList.add('alias-text', 'text-capitalize')
+        aliasText.innerText = obj.aliasName
+
+        const heroText = document.createElement('p')
+        heroText.classList.add('hero-text', 'text-capitalize')
+        heroText.innerText = obj.isHero
+
+        const universeText = document.createElement('p')
+        universeText.classList.add('universe-text', 'text-capitalize')
+        universeText.innerText = obj.universe
+
+        const powerList = document.createElement('ul')
+        powerList.setAttribute('id', 'powerList')
+        powerList.classList.add('power-list', 'list-group', 'list-group-flush')
+
+        obj.powers.forEach(power => {
+            const li = document.createElement('li')
+            li.classList.add('list-group-item')
+            li.innerText = power
+
+            powerList.appendChild(li)
+        })
+
+        const enemyList = document.createElement('ul')
+        powerList.setAttribute('id', 'enemyList')
+        powerList.classList.add('power-list', 'list-group', 'list-group-flush')
+
+        obj.enemies.forEach(enemy => {
+            const li = document.createElement('li')
+            li.classList.add('list-group-item')
+            li.innerText = enemy
+
+            enemyList.appendChild(li)
+        })
+        // append elements to card body
+        cardBody.appendChild(h3)
+        cardBody.appendChild(aliasText)
+        cardBody.appendChild(heroText)
+        cardBody.appendChild(universeText)
+        cardBody.appendChild(powerList)
+        cardBody.appendChild(enemyList)
+
+        // append element to card 
+        card.appendChild(img)
+        card.appendChild(cardBody)
 
 
-        heroName.innerText = this.hero
-        aliasName.innerText = this.alias
+        // append to col 
+        col.appendChild(card)
+
+        // apeend to cardRow
+        cardRow.appendChild(col)
     }
 
 
